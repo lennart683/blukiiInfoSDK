@@ -1,1 +1,1 @@
-# blukiiInfo
+# blukiiInfoSDK
