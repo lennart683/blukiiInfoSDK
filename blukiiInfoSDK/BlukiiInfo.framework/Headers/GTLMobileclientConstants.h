@@ -27,6 +27,8 @@ GTL_EXTERN NSString * const kGTLAuthScopeMobileclientUserinfoEmail;  // "https:/
 
 // GTLMobileclient - OutputInfoType
 GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Html;  // "HTML"
+GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Message;  // "MESSAGE"
+GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Mobycard;  // "MOBYCARD"
 GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Pdf;  // "PDF"
 GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Vcard;  // "VCARD"
 GTL_EXTERN NSString * const kGTLMobileclient_OutputInfoType_Wifi;  // "WIFI"

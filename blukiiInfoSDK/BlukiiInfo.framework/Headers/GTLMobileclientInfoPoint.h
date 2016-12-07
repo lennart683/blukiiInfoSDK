@@ -13,7 +13,7 @@
 // Description:
 //   This is an API
 // Classes:
-//   GTLMobileclientInfoPoint (0 custom class methods, 6 custom properties)
+//   GTLMobileclientInfoPoint (0 custom class methods, 9 custom properties)
 
 #if GTL_BUILT_AS_FRAMEWORK
   #import "GTL/GTLObject.h"
@@ -39,6 +39,9 @@
 
 @property (nonatomic, retain) NSNumber *isDeactivated;  // boolValue
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *notificationText;
+@property (nonatomic, copy) NSString *notificationTo;
 @property (nonatomic, retain) NSArray *outputInfos;  // of GTLMobileclientOutputInfo
 @property (nonatomic, retain) GTLMobileclientPicture *picture;
+@property (nonatomic, retain) NSNumber *rssi;  // intValue
 @end
