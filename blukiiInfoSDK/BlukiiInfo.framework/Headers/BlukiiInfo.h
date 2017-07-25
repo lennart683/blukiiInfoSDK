@@ -16,21 +16,27 @@ FOUNDATION_EXPORT const unsigned char BlukiiInfoVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <BlukiiInfo/PublicHeader.h>
 
-#import "GTLMobileClient.h"
+//#import "GTLMobileClient.h"
+#import "GTLRMobileclient.h"
 // #import <CommonCrypto/CommonHMAC.h> Wird nur für Amazaon Verschlüsselung benötigt
 
 //Google
-#import "GTLBase64.h"
-#import "GTLRuntimeCommon.h"
-#import "GTLTargetNamespace.h"
-#import "GTMGatherInputStream.h"
-#import "GTMHTTPFetchHistory.h"
-#import "GTMHTTPFetcher.h"
-#import "GTMHTTPFetcherLogging.h"
-#import "GTMHTTPUploadFetcher.h"
-#import "GTMOAuth2SignIn.h"
+#import "GTLRBase64.h"
+#import "GTLRFramework.h"
+#import "GTLRRuntimeCommon.h"
+#import "GTLRURITemplate.h"
+#import "GTLRUtilities.h"
 #import "GTMMIMEDocument.h"
-#import "GTMReadMonitorInputStream.h"
-#import "GTMOAuth2ViewControllerTouch.h"
+//#import "GTLRuntimeCommon.h"
+//#import "GTLTargetNamespace.h"
+//#import "GTMGatherInputStream.h"
+//#import "GTMHTTPFetchHistory.h"
+//#import "GTMHTTPFetcher.h"
+//#import "GTMHTTPFetcherLogging.h"
+//#import "GTMHTTPUploadFetcher.h"
+//#import "GTMOAuth2SignIn.h"
+//#import "GTMMIMEDocument.h"
+//#import "GTMReadMonitorInputStream.h"
+//#import "GTMOAuth2ViewControllerTouch.h"
 
 // #import "CocoaLumberjack/CocoaLumberjack.h"
