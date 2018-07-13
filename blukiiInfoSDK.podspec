@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "blukiiInfoSDK"
-  s.version          = "1.0.2"
+  s.version          = "1.0.7"
   s.summary          = "blukiiInfoSDK is a library for find and resolve blukii Beacons/Sensors or Keys"
   s.homepage         = "http://www.blukii.com/"
   s.documentation_url = "https://github.com/schneiderma/blukii_developer/tree/gh-pages/iOS/blukii-Info-SDK"
