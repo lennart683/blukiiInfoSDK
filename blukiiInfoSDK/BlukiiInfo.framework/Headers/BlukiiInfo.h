@@ -18,7 +18,8 @@ FOUNDATION_EXPORT const unsigned char BlukiiInfoVersionString[];
 
 //#import "GTLMobileClient.h"
 #import "GTLRMobileclient.h"
-// #import <CommonCrypto/CommonHMAC.h> Wird nur für Amazaon Verschlüsselung benötigt
+#import "InfoCrypto.h"
+//#import <CommonCrypto/CommonHMAC.h> // Wird nur für Amazaon Verschlüsselung benötigt
 
 //Google
 #import "GTLRBase64.h"
