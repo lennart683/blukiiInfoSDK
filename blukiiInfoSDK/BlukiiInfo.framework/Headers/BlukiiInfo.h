@@ -18,6 +18,8 @@ FOUNDATION_EXPORT const unsigned char BlukiiInfoVersionString[];
 
 //#import "GTLMobileClient.h"
 #import "GTLRMobileclient.h"
+#import "GTLRAuth.h"
+#import "GTLRSecurebeacon.h"
 #import "InfoCrypto.h"
 //#import <CommonCrypto/CommonHMAC.h> // Wird nur für Amazaon Verschlüsselung benötigt
 
@@ -28,6 +30,9 @@ FOUNDATION_EXPORT const unsigned char BlukiiInfoVersionString[];
 #import "GTLRURITemplate.h"
 #import "GTLRUtilities.h"
 #import "GTMMIMEDocument.h"
+#import "GTLRObject.h"
+#import "GTMSessionFetcher.h"
+#import "GTMSessionFetcherService.h"
 //#import "GTLRuntimeCommon.h"
 //#import "GTLTargetNamespace.h"
 //#import "GTMGatherInputStream.h"
