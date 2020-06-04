@@ -1,0 +1,560 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)
+// swift-module-flags: -target armv7s-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name BlukiiInfo
+@_exported import BlukiiInfo
+import CoreBluetooth
+import CoreData
+import CoreLocation
+import Foundation
+import Swift
+import SystemConfiguration
+import UIKit
+@objc open class BKDiscoveryData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  open var deviceFoundDate: Foundation.Date? {
+    get
+    }
+  open var macAddress: Swift.String? {
+    get
+    }
+  open var blukiiId: Swift.String? {
+    get
+    }
+  open var identifier: Foundation.UUID? {
+    get
+    }
+  open var deviceName: Swift.String? {
+    get
+    }
+  open var device: CoreBluetooth.CBPeripheral? {
+    get
+    }
+  open var secureBeaconState: BlukiiInfo.BKSecureBeaconState {
+    get
+    }
+  open var eventBeaconState: BlukiiInfo.BKCommonState {
+    get
+    }
+  open var beaconSensorData: BlukiiInfo.BKBeaconSensorData? {
+    get
+    }
+  open var firmware: Swift.String? {
+    get
+    }
+  open var product: Swift.String? {
+    get
+    }
+  open var serviceMode: Swift.Bool {
+    get
+    }
+  open var eddystoneData: BlukiiInfo.BKEddystoneData? {
+    get
+    }
+  open var iBeaconData: BlukiiInfo.BKiBeaconData? {
+    get
+    }
+  open var keyData: BlukiiInfo.BKKeyData? {
+    get
+    }
+  open var type: BlukiiInfo.BKBlukiiType {
+    get
+    }
+  open var advInterval: Swift.Int {
+    get
+    }
+  open var battery: Swift.Int {
+    get
+    }
+  open var txPower: Swift.Int16 {
+    get
+    }
+  open func getRssi() -> Swift.Int
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public enum BKOutputType : Swift.String {
+  case PDF
+  case YOUTUBE
+  case VCARD
+  case HTML
+  case WIFI
+  case MESSAGE
+  case MOBYCARD
+  case MECARD
+  case VIDEO
+  case AUDIO
+  public func isDownloadable() -> Swift.Bool
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BKCommonState : Swift.String {
+  case on
+  case off
+  case undefined
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc open class BKBeaconSensorData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  open var airPressure: Swift.Float {
+    get
+    }
+  open var light: Swift.Int16 {
+    get
+    }
+  open var humidity: Swift.Int16 {
+    get
+    }
+  open var temperature: Swift.Float {
+    get
+    }
+  open var acceleration: BlukiiInfo.BKAxisData? {
+    get
+    }
+  open var magnetism: BlukiiInfo.BKAxisData? {
+    get
+    }
+  open var triggerSwitched: BlukiiInfo.BKCommonState {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+@objc open class BKDiscoverySettings : ObjectiveC.NSObject {
+  final public let RSSI_MAX: Swift.Int
+  final public let RSSI_MIN: Swift.Int
+  final public let RSSI_DEFAULT: Swift.Int
+  open func getRssiThreshold() -> Swift.Int
+  open func setRssiThreshold(_ rssiThreshold: Swift.Int)
+  open var calculatingRssiAverage: Swift.Bool
+  final public let SCANDURATION_DEFAULT: Swift.Int
+  open var scanDuration: Swift.Int
+  final public let SCANWAITDURATION_DEFAULT: Swift.Int
+  open var scanWaitDuration: Swift.Int
+  final public let DISABLESCANWAITTIMEATSTARTFORTIME_DEFAULT: Swift.Int
+  open var disableScanWaitTimeAtStartForTime: Swift.Int
+  open var scanInBackground: Swift.Bool {
+    get
+    set
+  }
+  open var scanContinuouslyOnBackground: Swift.Bool
+  open var scanContinuouslyOnForeground: Swift.Bool
+  open var scanNonBlukiis: Swift.Bool
+  open var scanBlukiiData: Swift.Bool
+  open var scanBeaconSensorData: Swift.Bool
+  open var scanEddystoneData: Swift.Bool
+  open var scanIBeaconData: Swift.Bool
+  @available(*, deprecated, message: "Please use ibeaconRegionsDefault()")
+  final public let IBEACONREGIONS_DEFAULT: [Swift.String]
+  open func ibeaconRegionsDefault() -> [CoreLocation.CLBeaconRegion]
+  open var securebeaconUUID: Foundation.UUID
+  @available(*, deprecated, message: "Please use setScanIBeaconRegions(regions: [CLBeaconRegion])")
+  open func setScanIBeaconRegions(regionStrings regions: [Swift.String])
+  open func getScanIBeaconRegions() -> [CoreLocation.CLBeaconRegion]
+  open func setScanIBeaconRegions(regions: [CoreLocation.CLBeaconRegion])
+  @objc deinit
+}
+@objc open class BKiBeaconData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc open var uuid: Foundation.UUID! {
+    get
+    }
+  @objc open var major: Foundation.NSNumber! {
+    get
+    }
+  @objc open var minor: Foundation.NSNumber! {
+    get
+    }
+  open var proximity: CoreLocation.CLProximity? {
+    get
+    }
+  open var accuracy: CoreLocation.CLLocationAccuracy? {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc open class BKAxisData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  open var x: Swift.Int16 {
+    get
+    }
+  open var y: Swift.Int16 {
+    get
+    }
+  open var z: Swift.Int16 {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public enum BKBlukiiCloudUserRole : Swift.String, Swift.CaseIterable {
+  case user
+  case groupAdmin
+  case admin
+  case unknown
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public typealias AllCases = [BlukiiInfo.BKBlukiiCloudUserRole]
+  public static var allCases: [BlukiiInfo.BKBlukiiCloudUserRole] {
+    get
+  }
+}
+@objc open class BKInfoData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  @objc open var id: Swift.String? {
+    get
+    }
+  @objc open var blukiiList: [Swift.String] {
+    get
+    }
+  open var bundleList: [Swift.String] {
+    get
+    }
+  @objc open var outputDataList: [Swift.String : BlukiiInfo.BKInfoOutputData] {
+    get
+    }
+  @objc open var rssi: Swift.Int64 {
+    get
+    }
+  @objc open var condition: Swift.String? {
+    get
+    }
+  @objc open var name: Swift.String? {
+    get
+    }
+  @objc open var infoProviderId: Swift.Int {
+    get
+    }
+  @objc open var timeStamp: Foundation.Date {
+    get
+    }
+  open var cached: Swift.Bool {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol BKClientDiscoveryDelegate {
+  func onDiscoveryInitialized()
+  func onDiscoveryResult(_ discoveryResultList: [BlukiiInfo.BKDiscoveryData])
+  func onDiscoveryError(_ errorCode: BlukiiInfo.BKDiscoveryError)
+  func onDiscoveryInfo(_ infoCode: BlukiiInfo.BKDiscoveryInfo)
+}
+public protocol BKDecryptSecureBeaconsDelegate {
+  func onDecryptSecureBeacons(_ decryptedDiscoveryDataList: [BlukiiInfo.BKDiscoveryData], decryptedCount: Swift.Int)
+  func onDecryptError(_ error: Swift.Error)
+}
+@objc open class BKClient : ObjectiveC.NSObject {
+  open var discoveryDelegate: BlukiiInfo.BKClientDiscoveryDelegate?
+  open var decryptSecureBeaconDelegate: BlukiiInfo.BKDecryptSecureBeaconsDelegate?
+  open var discoverySettings: BlukiiInfo.BKDiscoverySettings! {
+    get
+    }
+  open func isDiscovering() -> Swift.Bool
+  open func initDiscovery()
+  open func isDiscoveryInitialized() -> Swift.Bool
+  open func startDiscovery() -> Swift.Bool
+  open func stopDiscovery() -> Swift.Bool
+  public static let SECUREBEACON_CACHETIMEOUT_DEFAULT: Swift.Int
+  open func getDecryptSecureBeaconCacheTimeout() -> Swift.Int
+  open func setDecryptSecureBeaconCacheTimeout(_ decryptSecureBeaconCacheTimeout: Swift.Int)
+  open func decryptSecureBeacons(discoveryDataList: [BlukiiInfo.BKDiscoveryData])
+  @objc deinit
+}
+public enum BKSecureBeaconState : Swift.String {
+  case off
+  case encrypted
+  case decrypted
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc open class BKKeyData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  public enum Mode : Swift.String {
+    case OFF
+    case CONVENIENCE
+    case PAIRING
+    case SECURE_PREPARED
+    case SECURE
+    public typealias RawValue = Swift.String
+    public init?(rawValue: Swift.String)
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  open var timeSync: Swift.Bool {
+    get
+    }
+  open var mode: BlukiiInfo.BKKeyData.Mode {
+    get
+    }
+  open var isButtonPushed: Swift.Bool {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public enum BKDiscoveryError : Swift.Error {
+  case initFailed
+  case terminationFailed
+  case bluetoothOff
+  case bluetoothOn
+  case startBleFailed
+  case stopBleFailed
+  case locationServicesIsNotAlways
+  public static func == (a: BlukiiInfo.BKDiscoveryError, b: BlukiiInfo.BKDiscoveryError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol BKBlukiiCloudDelegate {
+  func onLogin()
+  func onLoginError(_ error: Swift.Error)
+}
+open class BKBlukiiCloud {
+  open var delegate: BlukiiInfo.BKBlukiiCloudDelegate?
+  open func setCredentials(user: Swift.String, password: Swift.String)
+  open func setApiKey(apiKey: Swift.String)
+  open func getUserRole() -> BlukiiInfo.BKBlukiiCloudUserRole
+  open func isAuthentificated() -> Swift.Bool
+  open func login()
+  open func logout()
+  open func setServerUrl(serverUrl: Swift.String)
+  @objc deinit
+}
+@objc open class BKEddystoneData : ObjectiveC.NSObject, Foundation.NSSecureCoding {
+  open var uidNamespace: Swift.String? {
+    get
+    }
+  open var uidInstance: Swift.String? {
+    get
+    }
+  open var url: Swift.String? {
+    get
+    }
+  open var txPower: Swift.Int16? {
+    get
+    }
+  open var battery: Swift.Int {
+    get
+    }
+  open var temperature: Swift.Float? {
+    get
+    }
+  open var packets: Swift.Int {
+    get
+    }
+  open var activeTime: Swift.Int {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  @objc public static var supportsSecureCoding: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public enum BKBlukiiCloudError : Swift.Error {
+  case serverError
+  case unauthorized
+  case noData
+  public static func == (a: BlukiiInfo.BKBlukiiCloudError, b: BlukiiInfo.BKBlukiiCloudError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@objc open class BKInfoBundleOutputData : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc open var title: Swift.String? {
+    get
+    }
+  @objc open var previewUrl: Swift.String? {
+    get
+    }
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
+  public static var supportsSecureCoding: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+@objc open class BKInfoBundleData : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc open var id: Swift.String? {
+    get
+    }
+  @objc open var outputDataList: [Swift.String : BlukiiInfo.BKInfoBundleOutputData] {
+    get
+    }
+  open var infoDataList: [BlukiiInfo.BKInfoData]? {
+    get
+    }
+  open var name: Swift.String? {
+    get
+    }
+  open var infoProviderId: Swift.Int? {
+    get
+    }
+  @objc open var itemsProtected: Swift.Bool {
+    get
+    }
+  @objc open var timeStamp: Swift.Int64 {
+    get
+    }
+  open var cached: Swift.Bool? {
+    get
+    }
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc required convenience public init?(coder aDecoder: Foundation.NSCoder)
+  public static var supportsSecureCoding: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+@objc open class BKFeatureValidator : ObjectiveC.NSObject {
+  open func isAppOnForeground() -> Swift.Bool
+  open func isConnectedToInternet() -> Swift.Bool
+  open func bluetoothIsEnabled() -> Swift.Bool
+  open func bluetoothAccessDenied() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum BKInfoDataConditionState {
+  case contitionIsTrue, conditionIsFalse, conditionNotAvailable, valueNotAvailabe
+  public static func == (a: BlukiiInfo.BKInfoDataConditionState, b: BlukiiInfo.BKInfoDataConditionState) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol BKBlukiiReportInfoViolationDelegate {
+  func onReportInfoViolation()
+  func onReportError(_ errorCode: Swift.Error)
+}
+@objc open class BKBlukiiInfo : ObjectiveC.NSObject {
+  open var reportInfoViolationDelegate: BlukiiInfo.BKBlukiiReportInfoViolationDelegate?
+  public static let OUTPUTLANGUAGE_ENGLISH: Swift.String
+  public static let OUTPUTLANGUAGE_FRENCH: Swift.String
+  public static let OUTPUTLANGUAGE_GERMAN: Swift.String
+  public static let INFODATA_CACHETIMEOUT_DEFAULT: Swift.Int
+  open func getInfoDataCacheTimeout() -> Swift.Int64
+  open func setInfoDataCacheTimeout(_ infoDataCacheTimeout: Swift.Int64)
+  open func getInfoData(blukiiIds: [Swift.String], completionHandler: @escaping ([BlukiiInfo.BKInfoData]?, Swift.Error?) -> ())
+  open func getInfoBundles(bundleIds: [Swift.String], completionHandler: @escaping ([BlukiiInfo.BKInfoBundleData]?, Swift.Error?, Swift.Bool) -> ())
+  open func reportInfoViolation(infoData: BlukiiInfo.BKInfoData, language: Swift.String, senderName: Swift.String, senderEmail: Swift.String, messageText: Swift.String)
+  open func reportClick(blukiiId: Swift.String, timeStamp: Foundation.Date, completionHandler: @escaping (Swift.Bool, Swift.Error?) -> ())
+  public static func extractBlukiiIds(discoveryDataList: [BlukiiInfo.BKDiscoveryData]) -> [Swift.String]
+  public static func checkConditionState(infoDataCondition: Swift.String, discoveryData: BlukiiInfo.BKDiscoveryData) -> BlukiiInfo.BKInfoDataConditionState
+  public static func convertBarCodeToBlukiiId(barCode: Swift.String) -> Swift.String?
+  public static func convertNfcToBlukiiId(nfcCode: Swift.String) -> Swift.String?
+  @objc deinit
+}
+@objc open class BKInfoOutputData : ObjectiveC.NSObject, Foundation.NSCoding {
+  @objc open var title: Swift.String? {
+    get
+    }
+  @objc open var url: Swift.String? {
+    get
+    }
+  @objc open var previewUrl: Swift.String? {
+    get
+    }
+  open var outputType: BlukiiInfo.BKOutputType? {
+    get
+    }
+  @objc open var urlExtra: Swift.String? {
+    get
+    }
+  @objc open var plainTextExtra: Swift.String? {
+    get
+    }
+  @objc required convenience public init?(coder decoder: Foundation.NSCoder)
+  @objc open func encode(with aCoder: Foundation.NSCoder)
+  public static var supportsSecureCoding: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+open class BKController {
+  public static let instance: BlukiiInfo.BKController
+  open func getCloud() -> BlukiiInfo.BKBlukiiCloud
+  open func getDiscoveryClient() -> BlukiiInfo.BKClient
+  open func getInfoClient() -> BlukiiInfo.BKBlukiiInfo
+  @objc deinit
+}
+public enum BKBlukiiType : Swift.String {
+  case unknown
+  case smartKey
+  case smartBeacon
+  case sensorBeacon
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BKDiscoveryInfo {
+  case bleScanStarted
+  case bleScanStopped
+  case bleScanPaused
+  public static func == (a: BlukiiInfo.BKDiscoveryInfo, b: BlukiiInfo.BKDiscoveryInfo) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension BlukiiInfo.BKOutputType : Swift.Equatable {}
+extension BlukiiInfo.BKOutputType : Swift.Hashable {}
+extension BlukiiInfo.BKOutputType : Swift.RawRepresentable {}
+extension BlukiiInfo.BKCommonState : Swift.Hashable {}
+extension BlukiiInfo.BKCommonState : Swift.RawRepresentable {}
+extension BlukiiInfo.BKBlukiiCloudUserRole : Swift.Equatable {}
+extension BlukiiInfo.BKBlukiiCloudUserRole : Swift.Hashable {}
+extension BlukiiInfo.BKBlukiiCloudUserRole : Swift.RawRepresentable {}
+extension BlukiiInfo.BKSecureBeaconState : Swift.Equatable {}
+extension BlukiiInfo.BKSecureBeaconState : Swift.Hashable {}
+extension BlukiiInfo.BKSecureBeaconState : Swift.RawRepresentable {}
+extension BlukiiInfo.BKKeyData.Mode : Swift.Equatable {}
+extension BlukiiInfo.BKKeyData.Mode : Swift.Hashable {}
+extension BlukiiInfo.BKKeyData.Mode : Swift.RawRepresentable {}
+extension BlukiiInfo.BKDiscoveryError : Swift.Equatable {}
+extension BlukiiInfo.BKDiscoveryError : Swift.Hashable {}
+extension BlukiiInfo.BKBlukiiCloudError : Swift.Equatable {}
+extension BlukiiInfo.BKBlukiiCloudError : Swift.Hashable {}
+extension BlukiiInfo.BKInfoDataConditionState : Swift.Hashable {}
+extension BlukiiInfo.BKBlukiiType : Swift.Hashable {}
+extension BlukiiInfo.BKBlukiiType : Swift.RawRepresentable {}
+extension BlukiiInfo.BKDiscoveryInfo : Swift.Equatable {}
+extension BlukiiInfo.BKDiscoveryInfo : Swift.Hashable {}
